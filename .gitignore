@@ -1,6 +1,11 @@
 # package directories
 node_modules
-jspm_packages
 
 # Serverless directories
 .serverless
+
+# dependencies
+client/node_modules
+
+# production
+client/build
