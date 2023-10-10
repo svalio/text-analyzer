@@ -6,6 +6,12 @@ provider:
   name: aws
   runtime: nodejs14.x
 
+custom:
+  client:
+    bucketName: ${env:USER}-react-app
+    distributionFolder: client/build
+    indexDocument: index.html
+
 functions:
   analyze:
     handler: index.handler
