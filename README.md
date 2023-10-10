@@ -3,7 +3,7 @@
 Run this command to initialize a new project in a new working directory.
 
 ```
-npm install
+npm install && cd client && npm install
 ```
 
 ## Usage
