@@ -1,0 +1,31 @@
+app: text-analyzer
+service: text-analyzer
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  analyze:
+    handler: index.handler
+    events:
+      - http:
+          path: /analyze
+          method: post
+          cors: 
+            origins: "*"
+            headers:
+              - Content-Type
+            allowCredentials: false
+            maxAge: 86400
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-finch
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
